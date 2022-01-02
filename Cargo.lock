@@ -31,25 +31,51 @@ dependencies = [
 ]
 
 [[package]]
-name = "alsa"
-version = "0.5.0"
+name = "libpulse-binding"
+version = "2.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75c4da790adcb2ce5e758c064b4f3ec17a30349f9961d3e5e6c9688b052a9e18"
+checksum = "04b4154b9bc606019cb15125f96e08e1e9c4f53d55315f1ef69ae229e30d1765"
 dependencies = [
- "alsa-sys",
  "bitflags",
  "libc",
- "nix",
+ "libpulse-sys",
+ "num-derive",
+ "num-traits",
+ "winapi",
 ]
 
 [[package]]
-name = "alsa-sys"
-version = "0.3.1"
+name = "libpulse-simple-binding"
+version = "2.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db8fee663d06c4e303404ef5f40488a53e062f89ba8bfed81f42325aafad1527"
+checksum = "1165af13c42b9c325582b1a75eaa4a0f176c9094bb3a13877826e9be24881231"
+dependencies = [
+ "libpulse-binding",
+ "libpulse-simple-sys",
+ "libpulse-sys",
+]
+
+[[package]]
+name = "libpulse-simple-sys"
+version = "1.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "83346d68605e656afdefa9a8a2f1968fa05ab9369b55f2e26f7bf2a11b7e8444"
+dependencies = [
+ "libpulse-sys",
+ "pkg-config",
+]
+
+[[package]]
+name = "libpulse-sys"
+version = "1.19.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ebed2cc92c38cac12307892ce6fb17e2e950bfda1ed17b3e1d47fd5184c8f2b"
 dependencies = [
  "libc",
+ "num-derive",
+ "num-traits",
  "pkg-config",
+ "winapi",
 ]
 
 [[package]]
